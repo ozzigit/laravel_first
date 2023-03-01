@@ -1,8 +1,16 @@
 <?php
 
+use App\Http\Controllers\Post\CreateController;
+use App\Http\Controllers\Post\DeleteController;
+use App\Http\Controllers\Post\EditController;
+use App\Http\Controllers\Post\IndexController;
+use App\Http\Controllers\Post\ShowController;
+use App\Http\Controllers\Post\StoreController;
+use App\Http\Controllers\Post\UpdateController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,20 +22,15 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get("/post", [PostController::class, "index"])->name("post");
-// Route::get("/posts/create", [PostController::class, "create"])->name("post_create");
-// Route::get("/post/update", [PostController::class, "update"])->name("post_update");
-// Route::get("/post/delete", [PostController::class, "delete"])->name("post_delete");
-// Route::get("/post/first_or_create", [PostController::class, "first_or_create"])->name("post_fcr");
 
-Route::get("/posts", [PostController::class, "index"])->name("posts");
-Route::get("/posts/create", [PostController::class, "post_create"])->name("post_create");
-Route::post("/posts/create", [PostController::class, "post_store"])->name("post_store");
+Route::get("/posts", IndexController::class)->name("posts");
+Route::get("/posts/create", CreateController::class)->name("post_create");
+Route::post("/posts/create", StoreController::class)->name("post_store");
 
-Route::get("/posts/{post}", [PostController::class, "post_show"])->name("post_show");
-Route::get("/posts/{post}/edit", [PostController::class, "post_edit"])->name("post_edit");
-Route::patch("/posts/{post}/update", [PostController::class, "post_update"])->name("post_update");
-Route::delete("/posts/{post}/delete", [PostController::class, "post_delete"])->name("post_delete");
+Route::get("/posts/{post}", ShowController::class)->name("post_show");
+Route::get("/posts/{post}/edit", EditController::class)->name("post_edit");
+Route::patch("/posts/{post}/update", UpdateController::class)->name("post_update");
+Route::delete("/posts/{post}/delete", DeleteController::class)->name("post_delete");
 
 
 
