@@ -3,23 +3,16 @@
 namespace App\Http\Controllers\Post;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\StoreRequest;
 
 class StoreController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(StoreRequest $request)
     {
-        $data = Request()->validate([
-            "title" => "string",
-            "content" => "string",
-            "author" => "string",
-            "img" => "mimes:jpeg,jpg",
-        ]);
-        if (Request()->hasFile("img")) {
-            $data["img"] = Request()
-                ->file("img")
-                ->store("uploads", "public");
+        $data = $request->validated();
+        if ($request->hasFile("img")) {
+            $data["img"] = $request->file("img")->store("uploads", "public");
         } else {
             unset($data["img"]);
         }
