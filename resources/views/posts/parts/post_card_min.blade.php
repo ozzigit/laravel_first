@@ -15,7 +15,7 @@
         </h3>
         <h5 class='card-text ms-3'>{{$sub_content}}</h5>
         @if (!is_null($img))
-            <img src={{ asset('storage/'.$img)}}
+            <img src={{ asset('storage/'.$img)}} class="card-img-top embed-responsive-item">
         @else
             <p class='card-text ms-3'>No img</p>
         @endif
