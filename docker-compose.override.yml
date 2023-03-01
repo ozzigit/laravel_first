@@ -1,0 +1,5 @@
+version: '3.7'
+services:
+    laravel_web:
+        ports:
+            - "46003:80"

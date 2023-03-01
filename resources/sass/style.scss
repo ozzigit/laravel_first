@@ -1,0 +1,175 @@
+// null
+@import 'null.scss';
+
+body {
+    font-family: 'Rubik';
+    max-width: 1440px;
+    min-width: 260px;
+    margin: auto;
+}
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+.wrapper {
+    width: 100%;
+    background: #ffffff;
+    font-family: 'Rubik';
+}
+.block {
+    max-width: 1200px;
+    padding: 0px 30px;
+    width: 100%;
+}
+
+.shadow {
+    box-shadow: 0 35px 20px #ebebf261;
+}
+
+// header---------------------------------------------------------------
+@import 'index/header';
+// intro---------------------------------------------------------------
+@import 'index/intro';
+// benefits---------------------------------------------------------------
+@import 'index/benefits';
+//feature---------------------------------------------------------------
+@import 'index/feature';
+// plan---------------------------------------------------------------
+@import 'index/plan';
+// map---------------------------------------------------------------
+@import 'index/map';
+// clients---------------------------------------------------------------
+@import 'index/clients';
+// cutomers---------------------------------------------------------------
+@import 'index/customers';
+//buttons---------------------------------------------------------------
+@import 'index/buttons';
+// subscribe---------------------------------------------------------------
+@import 'index/subscribe';
+//footer---------------------------------------------------------------
+@import 'index/footer';
+
+//slider---------------------------------------------------------------
+@import 'index/slider';
+
+//media---------------------------------------------------------------
+@media (max-width: 1024px) {
+    // --------------fonts ------------------------
+    @import 'index/adaptive_fonts.scss';
+    //burger
+    @import 'index/burger.scss';
+
+    .customer__card {
+        overflow: hidden;
+    }
+    // .customer__card:nth-child(n + 3) {
+    // display: none;
+    // }
+}
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column-reverse;
+    }
+    .intro__about {
+        max-width: 100%;
+    }
+    .feature__block {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature__image {
+        max-width: 70%;
+    }
+    .feature__text {
+        max-width: 100%;
+    }
+
+    // .customer__card:nth-child(n + 2) {
+    // display: none;
+    // }
+    // .customer__card:nth-child(1) {
+    // margin: auto;
+    // }
+    .intro__button {
+        width: 150px;
+        height: 45px;
+    }
+    .plan__card {
+        margin: 5% 1%;
+    }
+    .footer__wrapper {
+        flex-direction: column-reverse;
+    }
+    .footer__nav {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 568px) {
+    .plans__cards__block {
+        flex-direction: column;
+    }
+    .clients__block {
+        flex-direction: column;
+        width: 90%;
+    }
+    .clients__logo {
+        padding-bottom: 15px;
+    }
+    .benefits__card {
+        flex-direction: column;
+        // display: flex;
+    }
+    .benefits__card-pic {
+        margin-right: 0px;
+        margin-bottom: 15px;
+    }
+    .benefits__card-title {
+        text-align: center;
+    }
+    .benefits__text {
+        display: flex;
+        flex-direction: column;
+    }
+    .plan__card {
+        margin: 5% auto;
+    }
+
+    .customer__card {
+    }
+
+    .buttons__block {
+        flex-direction: column;
+    }
+    .buttons__left {
+        margin-bottom: 30px;
+    }
+    .button__dot {
+        margin-right: 15px;
+    }
+
+    .button__arrow {
+        margin-left: 0px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .subscribe {
+        flex-direction: column;
+    }
+    .subscribe__block {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .subscribe__button {
+        max-width: 80%;
+    }
+}
