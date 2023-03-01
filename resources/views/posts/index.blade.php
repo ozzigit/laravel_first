@@ -14,6 +14,9 @@
         @empty
             <div class="alert alert-info" role="alert">No post yet!</div>
         @endforelse
+        <div class="d-flex justify-content-center m-4">
+            {{ $posts->links()}}
+        </div>
 
     </div>
     @endsection
